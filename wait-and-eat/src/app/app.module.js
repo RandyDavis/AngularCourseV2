@@ -4,11 +4,15 @@
 (function() {
     'use strict';
 
-    angular.module('app', [
+    angular
+        .module('app', [
         // Angular Modules
         'ngRoute',
 
         // 3rd Party Modules
-        'firebase'
+        'firebase',
+
+        // Custom Modules
+        'app.landing'
     ]);
 })();
