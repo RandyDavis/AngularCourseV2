@@ -11,14 +11,27 @@
     <button type="submit" class="btn btn-primary">Add Party</button>
 </form>
 
-<div ng-repeat="party in vm.parties">
-    Name: {{party.name}}
-    <br>
-    Phone: {{party.phone}}
-    <br>
-    Size: {{party.size}}
-</div>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Done?</th>
+            <th>Info</th>
+            <th>Notified?</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tr ng-repeat="party in vm.parties">
+        <td>
+            <!-- TODO: Checkbox to display party.done -->
+        </td>
+        <td>
 
-{{ vm.newParty}}
-<br>
-{{vm.parties}}
+        </td>
+        <td>
+
+        </td>
+        <td>
+
+        </td>
+    </tr>
+</table>
