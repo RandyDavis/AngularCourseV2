@@ -32,9 +32,7 @@
             <div>{{ party.notified ? 'Yes' : 'No' }}</div>
         </td>
         <td>
-            <!-- Button that sends a text message to this party -->
             <button class="btn btn-success" ng-click="vm.sendTextMessage(party)">Send SMS</button>
-            <!-- Button that removes this party -->
             <button class="btn btn-danger" ng-click="vm.removeParty(party)">Remove</button>
         </td>
     </tr>
