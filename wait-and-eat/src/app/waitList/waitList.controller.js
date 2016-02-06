@@ -4,15 +4,19 @@
     angular.module('app.waitList')
         .controller('WaitListCtrl', WaitListCtrl);
 
+    WaitListCtrl.$inject = ['$firebaseArray'];
 
-    function WaitListCtrl () {
+
+    function WaitListCtrl ($firebaseArray) {
         var vm = this;
 
-        vm.parties = [1, 2, 3, 4];
+        var fireParties = new Firebase('enter firebase url here');
+
+        vm.parties = $firebaseArray(fireParties);
         vm.addParty = addParty;
 
         function addParty () {
-            vm.parties.push('another');
+            vm.parties.$add('another');
         }
 
     }
