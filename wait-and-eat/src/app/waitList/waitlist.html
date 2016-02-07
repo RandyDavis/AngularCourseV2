@@ -22,10 +22,10 @@
     </thead>
     <tr ng-repeat="party in vm.parties">
         <td>
-            <!-- TODO: Checkbox to display party.done -->
+            <input type="checkbox" ng-model="party.done" ng-change="vm.toggleDone(party">
         </td>
         <td>
-            <div><strong>{{ party.name }} {{ party.size }} people</strong></div>
+            <div><strong>{{ party.name }} (Party of: {{ party.size }})</strong></div>
             <div>{{ party.phone }}</div>
         </td>
         <td>
