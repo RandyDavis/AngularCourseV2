@@ -18,6 +18,7 @@
         vm.addParty = addParty;
         vm.removeParty = removeParty;
         vm.sendTextMessage = sendTextMessage;
+        vm.toggleDone = toggleDone;
 
         function Party () {
             this.name = '';
@@ -47,6 +48,9 @@
             vm.parties.$save(party);
         }
 
+        function toggleDone (party) {
+            vm.parties.$save(party);
+        }
     }
 
 })();

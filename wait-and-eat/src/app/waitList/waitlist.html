@@ -22,7 +22,7 @@
     </thead>
     <tr ng-repeat="party in vm.parties">
         <td>
-            <input type="checkbox" ng-model="party.done" ng-change="vm.toggleDone(party">
+            <input type="checkbox" ng-model="party.done" ng-change="vm.toggleDone(party)">
         </td>
         <td>
             <div><strong>{{ party.name }} (Party of: {{ party.size }})</strong></div>
