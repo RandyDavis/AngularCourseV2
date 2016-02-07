@@ -5,7 +5,17 @@
         .module('app.auth')
         .controller('AuthCtrl', AuthCtrl);
 
-    function AuthCtrl () {
+    AuthCtrl.$inject = ['$firebaseAuth'];
+
+    function AuthCtrl ($firebaseAuth) {
+        var vm = this;
+
+        vm.register = register;
+
+        function register(user) {
+
+        }
+
 
     }
 
