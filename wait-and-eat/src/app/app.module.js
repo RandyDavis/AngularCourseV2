@@ -13,8 +13,9 @@
         'firebase',
 
         // Custom Modules
+        'app.auth',
+        'app.core',
         'app.landing',
-        'app.waitList',
-        'app.auth'
+        'app.waitList'
     ]);
 })();
