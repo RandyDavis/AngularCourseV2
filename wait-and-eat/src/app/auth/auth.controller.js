@@ -5,11 +5,11 @@
         .module('app.auth')
         .controller('AuthCtrl', AuthCtrl);
 
-    AuthCtrl.$inject = ['$location', '$firebaseAuth'];
+    AuthCtrl.$inject = ['$location', '$firebaseAuth', 'FIREBASE_URL'];
 
-    function AuthCtrl ($location, $firebaseAuth) {
+    function AuthCtrl ($location, $firebaseAuth, FIREBASE_URL) {
         var vm = this;
-        var firebaseReference = new Firebase('https://waitandeat-v2-randy.firebaseio.com/');
+        var firebaseReference = new Firebase(FIREBASE_URL);
         var firebaseAuthObject = $firebaseAuth(firebaseReference);
 
 
