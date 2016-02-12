@@ -4,16 +4,16 @@
     angular.module('app.waitList')
         .controller('WaitListCtrl', WaitListCtrl);
 
-    WaitListCtrl.$inject = ['$firebaseArray', 'FIREBASE_URL'];
+    WaitListCtrl.$inject = ['$firebaseArray', 'FIREBASE_URL', 'partyService'];
 
 
-    function WaitListCtrl ($firebaseArray, FIREBASE_URL) {
+    function WaitListCtrl ($firebaseArray, FIREBASE_URL, partyService) {
         var vm = this;
 
-        var fireParties = new Firebase('FIREBASE_URL' + 'parties');
-        var fireTextMessages = new Firebase('FIREBASE_URL' + 'textMessages');
+        var fireParties = new Firebase(FIREBASE_URL + 'parties');
+        var fireTextMessages = new Firebase(FIREBASE_URL + 'textMessages');
 
-        vm.newParty = new Party();
+        vm.newParty = new partyService.Party();
         vm.parties = $firebaseArray(fireParties);
         vm.addParty = addParty;
         vm.removeParty = removeParty;
@@ -24,7 +24,7 @@
 
         function addParty () {
             vm.parties.$add(vm.newParty);
-            vm.newParty = new Party();
+            vm.newParty = new partyService.Party();
         }
 
         function removeParty (party) {
