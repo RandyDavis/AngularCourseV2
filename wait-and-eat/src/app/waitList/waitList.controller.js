@@ -20,13 +20,7 @@
         vm.sendTextMessage = sendTextMessage;
         vm.toggleDone = toggleDone;
 
-        function Party () {
-            this.name = '';
-            this.phone = '';
-            this.size = '';
-            this.done = false;
-            this.notified = false;
-        }
+
 
         function addParty () {
             vm.parties.$add(vm.newParty);
